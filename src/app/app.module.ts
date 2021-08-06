@@ -7,6 +7,8 @@ import { SidebarComponent } from './component/sidebar/sidebar.component';
 import { CustomerComponent } from './component/customer/customer.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import {authInterceptorProviders} from './service/auth.interceptor';
+import { LoginComponent } from './component/login/login/login.component';
 
 
 
@@ -14,7 +16,8 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     SidebarComponent,
-    CustomerComponent
+    CustomerComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,7 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
