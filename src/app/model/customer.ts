@@ -1,3 +1,5 @@
+import {User} from './user';
+
 export class Customer {
   customerId: number;
   name: string;
@@ -6,4 +8,5 @@ export class Customer {
   phoneNumber: string;
   facebookAcc: string;
   address: string;
+  user: User;
 }

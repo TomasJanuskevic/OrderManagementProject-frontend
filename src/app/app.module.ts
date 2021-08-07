@@ -4,9 +4,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './component/sidebar/sidebar.component';
-import { CustomerComponent } from './component/customer/customer.component';
+import { CustomerListComponent } from './component/customer-list/customer-list.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { MainpageComponent } from './component/mainpage/mainpage/mainpage.component';
+import { CustomerAddComponent } from './component/customer-add/customer-add.component';
+import { CustomerEditComponent } from './component/customer-edit/customer-edit.component';
 
 
 
@@ -14,7 +17,10 @@ import {HttpClientModule} from '@angular/common/http';
   declarations: [
     AppComponent,
     SidebarComponent,
-    CustomerComponent
+    CustomerListComponent,
+    MainpageComponent,
+    CustomerAddComponent,
+    CustomerEditComponent
   ],
   imports: [
     BrowserModule,
