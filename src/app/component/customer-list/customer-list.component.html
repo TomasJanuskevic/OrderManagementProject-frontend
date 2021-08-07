@@ -24,9 +24,20 @@
           <td>{{customer.phoneNumber}}</td>
           <td><a href="https://{{customer.facebookAcc}}">{{customer.facebookAcc}}</a></td>
           <td>{{customer.address}}</td>
+          <td>
+            <button type="button" class="btn btn-outline-warning" (click)="goToEditCustomer(customer.customerId)">Edit</button>
+          </td>
+          <td>
+            <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer(customer?.customerId)">Delete
+            </button>
+          </td>
+
         </tr>
         </tbody>
       </table>
+      <div style="text-align: right">
+        <button type="button" class="btn btn-success" (click)="goToAddCustomer()">Add new</button>
+      </div>
     </div>
   </div>
 </div>

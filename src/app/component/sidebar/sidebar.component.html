@@ -8,12 +8,12 @@
   <hr>
   <ul class="nav nav-pills flex-column mb-auto">
     <li class="nav-item">
-      <a href="#" class="nav-link active" aria-current="page">
+      <button class="nav-link link-dark" aria-current="page" (click)="goToMain()">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#home"></use>
         </svg>
         Home
-      </a>
+      </button>
     </li>
     <li>
       <a href="#" class="nav-link link-dark">
@@ -40,12 +40,12 @@
       </a>
     </li>
     <li>
-      <a href="#" class="nav-link link-dark">
+      <button id="customers" class="nav-link link-dark" (click)="goToCustomers()">
         <svg class="bi me-2" width="16" height="16">
           <use xlink:href="#people-circle"></use>
         </svg>
         Customers
-      </a>
+      </button>
     </li>
   </ul>
   <hr>
