@@ -22,4 +22,8 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['main']);
   }
 
+  public goToFlowers(): void {
+    this.router.navigate(['flowers']);
+  }
+
 }

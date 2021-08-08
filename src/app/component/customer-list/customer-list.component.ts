@@ -29,24 +29,25 @@ export class CustomerListComponent implements OnInit {
     });
   }
 
-
-  public deleteCustomer(customerId: number): void {
-    this.customerService.deleteCustomer(customerId).subscribe(
-      (response: void) => {
-        console.log(response);
-        this.getCustomers();
-      },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
-    );
+  public deleteCustomer(customerId: number, name: string, lastName: string): void {
+    if (confirm('Are you sure to delete ' + name + ' ' + lastName)) {
+      this.customerService.deleteCustomer(customerId).subscribe(
+        (response: void) => {
+          console.log(response);
+          this.getCustomers();
+        },
+        (error: HttpErrorResponse) => {
+          alert(error.message);
+        }
+      );
+    }
   }
 
   public goToAddCustomer(): void {
     this.router.navigate(['add-customer']);
   }
 
-  public goToEditCustomer(customerId: number): void {
-    this.router.navigate(['edit', customerId]);
+  public goToInfoCustomer(customerId: number): void {
+    this.router.navigate(['info-customer', customerId]);
   }
 }

@@ -11,12 +11,11 @@ import {CustomerService} from '../../service/customer.service';
   styleUrls: ['./customer-add.component.css']
 })
 export class CustomerAddComponent implements OnInit {
+  user: User = new User();
+  customer: Customer = new Customer();
 
   constructor(private router: Router, private userService: UserService, private customerService: CustomerService) {
   }
-
-  user: User = new User();
-  customer: Customer = new Customer();
 
   ngOnInit(): void {
     this.userService.getUser(1).subscribe((response: User) => {
@@ -27,7 +26,6 @@ export class CustomerAddComponent implements OnInit {
 
   public create(): void {
     this.customer.user = this.user;
-    console.log(this.customer);
     this.customerService.addCustomer(this.customer).subscribe(
       (response) => console.log(response),
       (error) => console.log(error)

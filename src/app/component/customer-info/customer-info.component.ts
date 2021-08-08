@@ -8,10 +8,10 @@ import {UserService} from '../../service/user.service';
 
 @Component({
   selector: 'app-customer-edit',
-  templateUrl: './customer-edit.component.html',
-  styleUrls: ['./customer-edit.component.css']
+  templateUrl: './customer-info.component.html',
+  styleUrls: ['./customer-info.component.css']
 })
-export class CustomerEditComponent implements OnInit {
+export class CustomerInfoComponent implements OnInit {
   user: User = new User();
   public customerId: number;
   public customer: Customer;

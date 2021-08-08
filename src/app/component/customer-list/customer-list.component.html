@@ -10,28 +10,32 @@
         <tr>
           <th scope="col">Name</th>
           <th scope="col">Last Name</th>
-          <th scope="col">Email</th>
           <th scope="col">Phone number</th>
           <th scope="col">Facebook account</th>
-          <th scope="col">Address</th>
+          <th></th>
+          <th></th>
+          <th></th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let customer of customers">
           <td>{{customer.name}}</td>
           <td>{{customer.lastname}}</td>
-          <td>{{customer.email}}</td>
           <td>{{customer.phoneNumber}}</td>
           <td><a href="https://{{customer.facebookAcc}}">{{customer.facebookAcc}}</a></td>
-          <td>{{customer.address}}</td>
-          <td>
-            <button type="button" class="btn btn-outline-warning" (click)="goToEditCustomer(customer.customerId)">Edit</button>
-          </td>
-          <td>
-            <button type="button" class="btn btn-outline-danger" (click)="deleteCustomer(customer?.customerId)">Delete
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-dark" (click)="goToInfoCustomer(customer.customerId)">Info
             </button>
           </td>
-
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-danger"
+                    (click)="deleteCustomer(customer.customerId, customer.name, customer.lastname)">Delete
+            </button>
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-primary">Orders
+            </button>
+          </td>
         </tr>
         </tbody>
       </table>

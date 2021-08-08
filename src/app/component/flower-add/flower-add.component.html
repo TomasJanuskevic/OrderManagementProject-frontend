@@ -1,0 +1,31 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-sm-9">
+      <h3>Add Flower</h3>
+      <form (ngSubmit)="create()">
+        <div class="mb-3">
+          <label for="flower" class="form-label">Flower</label>
+          <input type="text" class="form-control" id="flower" placeholder="" required [(ngModel)]="flower.flowerName"
+                 name="name">
+        </div>
+        <div class="mb-3">
+          <label for="color" class="form-label">Color</label>
+          <input type="text" class="form-control" id="color" placeholder="" required [(ngModel)]="flower.color"
+                 name="color">
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" class="form-control" id="price" placeholder="" required [(ngModel)]="flower.price"
+                 name="price">
+        </div>
+        <div style="text-align: right">
+          <button type="submit" class="btn btn-success">Create</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
