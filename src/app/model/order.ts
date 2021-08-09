@@ -6,7 +6,7 @@ export class Order {
   deliveryPrice: number;
   description: string;
   requiredDelivery: boolean;
-  orderDate: any;
+  orderDate: string;
   orderStatus: string;
   customer: Customer;
   bouquets: Bouquet[];

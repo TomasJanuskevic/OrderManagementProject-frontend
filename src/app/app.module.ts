@@ -14,6 +14,9 @@ import { FlowerListComponent } from './component/flower-list/flower-list.compone
 import { FlowerAddComponent } from './component/flower-add/flower-add.component';
 import { FlowerEditComponent } from './component/flower-edit/flower-edit.component';
 import { OrderListCustomerComponent } from './component/order-list-customer/order-list-customer.component';
+import { NewOrderComponent } from './component/new-order/new-order.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import {DatePipe} from '@angular/common';
 
 
 
@@ -30,14 +33,16 @@ import { OrderListCustomerComponent } from './component/order-list-customer/orde
     FlowerAddComponent,
     FlowerEditComponent,
     OrderListCustomerComponent,
+    NewOrderComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

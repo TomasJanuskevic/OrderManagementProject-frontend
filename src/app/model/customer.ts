@@ -1,4 +1,5 @@
 import {User} from './user';
+import {Order} from './order';
 
 export class Customer {
   customerId: number;
@@ -9,4 +10,5 @@ export class Customer {
   facebookAcc: string;
   address: string;
   user: User;
+  orders: Order[];
 }

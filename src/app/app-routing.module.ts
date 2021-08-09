@@ -7,6 +7,7 @@ import {CustomerInfoComponent} from './component/customer-info/customer-info.com
 import {FlowerListComponent} from './component/flower-list/flower-list.component';
 import {FlowerAddComponent} from './component/flower-add/flower-add.component';
 import {FlowerEditComponent} from './component/flower-edit/flower-edit.component';
+import {NewOrderComponent} from './component/new-order/new-order.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -17,6 +18,8 @@ const routes: Routes = [
   {path: 'flowers', component: FlowerListComponent},
   {path: 'add-flower', component: FlowerAddComponent},
   {path: 'edit-flower/:flowerId', component: FlowerEditComponent},
+  {path: 'new-order', component: NewOrderComponent},
+
 ];
 
 @NgModule({
