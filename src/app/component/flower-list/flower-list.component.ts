@@ -35,9 +35,7 @@ export class FlowerListComponent implements OnInit {
           console.log(response);
           this.getFlowers();
         },
-        (error: HttpErrorResponse) => {
-          alert(error.message);
-        }
+        (error) => console.log(error)
       );
     }
   }

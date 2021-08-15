@@ -7,20 +7,16 @@
       <div class="mb-3">
         <h3>New Order</h3>
       </div>
-      <form (ngSubmit)="createNewOrder()">
+      <form>
         <div class="mb-3">
-          <label class="control-label" for="customer">Select Customer</label>
-          <select class="form-select" id="customer" aria-label="Default select example" [(ngModel)]="order.customer"
-                  name="customer">
-            <option
-              *ngFor="let customer of user.customers"
-              [ngValue]="customer">{{customer.name + ' ' + customer.lastname }}</option>
-          </select>
+          <label for="description" class="form-label">Customer</label>
+          <input type="text" class="form-control" id="customer" placeholder="{{customer.name}} {{customer.lastname}}" disabled
+                 name="description">
         </div>
         <div class="form-group" id="date">
           <div class="input-group">
             <input class="form-control" placeholder="yyyy-mm-dd"
-                   name="date" [(ngModel)]="date" ngbDatepicker #d="ngbDatepicker">
+                   name="date" [(ngModel)]="dateNgb" ngbDatepicker #d="ngbDatepicker">
             <div class="input-group-append">
               <button class="bi bi-calendar-event" (click)="d.toggle()" type="button"></button>
             </div>
@@ -30,7 +26,8 @@
         <div class="mb-3">
           <label for="description" class="form-label">Description</label>
           <input type="text" class="form-control" id="description" placeholder="" required
-                 [(ngModel)]="order.description" name="description">
+                 [(ngModel)]="order.description"
+                 name="description">
         </div>
 
         <div class="mb-3">
@@ -56,6 +53,7 @@
     </div>
   </div>
 </div>
+
 
 
 

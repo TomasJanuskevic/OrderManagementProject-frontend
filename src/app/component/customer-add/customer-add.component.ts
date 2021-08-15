@@ -27,11 +27,14 @@ export class CustomerAddComponent implements OnInit {
   public create(): void {
     this.customer.user = this.user;
     this.customerService.addCustomer(this.customer).subscribe(
-      (response) => console.log(response),
+      (response) => {
+        console.log(response);
+        this.customer = new Customer();
+        this.goToCustomerList();
+      },
       (error) => console.log(error)
     );
-    this.customer = new Customer();
-    this.goToCustomerList();
+
   }
 
   private goToCustomerList(): void {

@@ -4,8 +4,6 @@ import {UserService} from '../../service/user.service';
 import {Customer} from '../../model/customer';
 import {Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
-import {HttpErrorResponse} from '@angular/common/http';
-import {newArray} from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-customer',
@@ -36,9 +34,7 @@ export class CustomerListComponent implements OnInit {
           console.log(response);
           this.getCustomers();
         },
-        (error: HttpErrorResponse) => {
-          alert(error.message);
-        }
+        (error) => console.log(error)
       );
     }
   }

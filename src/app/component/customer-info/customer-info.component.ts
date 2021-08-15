@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
-import {HttpErrorResponse} from '@angular/common/http';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
 
@@ -14,14 +13,13 @@ import {UserService} from '../../service/user.service';
 export class CustomerInfoComponent implements OnInit {
   user: User = new User();
   public customerId: number;
-  public customer: Customer;
+  public customer: Customer = new Customer();
 
   constructor(private route: ActivatedRoute, private router: Router, private customerService: CustomerService,
               private userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.customer = new Customer();
     this.customerId = this.route.snapshot.params.customerId;
     this.customerService.getCustomer(this.customerId).subscribe(
       (response) => {
@@ -42,12 +40,10 @@ export class CustomerInfoComponent implements OnInit {
       (response: Customer) => {
         console.log(response);
         this.customer = new Customer();
+        this.goToCustomerList();
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
+      (error) => console.log(error)
     );
-    this.goToCustomerList();
   }
 
   private goToCustomerList(): void {

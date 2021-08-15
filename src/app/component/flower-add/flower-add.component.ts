@@ -28,11 +28,14 @@ export class FlowerAddComponent implements OnInit {
   public create(): void {
     this.flower.user = this.user;
     this.flowerService.addflower(this.flower).subscribe(
-      (response) => console.log(response),
+      (response) => {
+        console.log(response);
+        this.flower = new Flower();
+        this.goToFlowerList();
+      },
       (error) => console.log(error)
     );
-    this.flower = new Flower();
-    this.goToFlowerList();
+
   }
 
   private goToFlowerList(): void {

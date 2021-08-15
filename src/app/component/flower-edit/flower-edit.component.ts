@@ -14,8 +14,8 @@ import {HttpErrorResponse} from '@angular/common/http';
 })
 export class FlowerEditComponent implements OnInit {
   user: User = new User();
-  public flowerId: number;
-  public flower: Flower;
+  flowerId: number;
+  flower: Flower;
 
   constructor(private route: ActivatedRoute, private router: Router, private flowerService: FlowerService,
               private userService: UserService) {
@@ -43,12 +43,10 @@ export class FlowerEditComponent implements OnInit {
       (response: Flower) => {
         console.log(response);
         this.flower = new Flower();
+        this.goToFlowerList();
       },
-      (error: HttpErrorResponse) => {
-        alert(error.message);
-      }
+      (error) => console.log(error)
     );
-    this.goToFlowerList();
   }
 
   private goToFlowerList(): void {

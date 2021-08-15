@@ -17,6 +17,7 @@ import { OrderListCustomerComponent } from './component/order-list-customer/orde
 import { NewOrderComponent } from './component/new-order/new-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
+import { NewOrderAddFlowersComponent } from './component/new-order-add-flowers/new-order-add-flowers.component';
 
 
 
@@ -34,6 +35,7 @@ import {DatePipe} from '@angular/common';
     FlowerEditComponent,
     OrderListCustomerComponent,
     NewOrderComponent,
+    NewOrderAddFlowersComponent,
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import {Order} from '../../model/order';
 import {OrderService} from '../../service/order.service';
 import {DatePipe} from '@angular/common';
 import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -17,7 +18,7 @@ export class NewOrderComponent implements OnInit {
   order: Order = new Order();
   date: NgbDate;
 
-  constructor(private userService: UserService, private orderService: OrderService, private datePipe: DatePipe) {
+  constructor(private userService: UserService, private orderService: OrderService, private datePipe: DatePipe, private router: Router) {
   }
 
   ngOnInit(): void {
@@ -31,9 +32,16 @@ export class NewOrderComponent implements OnInit {
   public createNewOrder(): void {
     this.order.orderDate = this.datePipe.transform(new Date(this.date.year, this.date.month - 1, this.date.day), 'yyyy-MM-dd');
     this.orderService.addOrder(this.order).subscribe(
-      (response) => console.log(response),
+      (response) => {
+        console.log(response);
+        this.goToNewOrderAddFlowers(this.order.customer.customerId);
+      },
       (error) => console.log(error)
     );
-    this.order = new Order();
+
+  }
+
+  public goToNewOrderAddFlowers(customerId: number): void {
+    this.router.navigate(['new-order-add-flowers', customerId]);
   }
 }
