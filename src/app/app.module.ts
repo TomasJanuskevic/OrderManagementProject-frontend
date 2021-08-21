@@ -13,11 +13,12 @@ import { CustomerInfoComponent } from './component/customer-info/customer-info.c
 import { FlowerListComponent } from './component/flower-list/flower-list.component';
 import { FlowerAddComponent } from './component/flower-add/flower-add.component';
 import { FlowerEditComponent } from './component/flower-edit/flower-edit.component';
-import { OrderListCustomerComponent } from './component/order-list-customer/order-list-customer.component';
 import { NewOrderComponent } from './component/new-order/new-order.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {DatePipe} from '@angular/common';
-import { NewOrderAddFlowersComponent } from './component/new-order-add-flowers/new-order-add-flowers.component';
+import { OrderCustomerComponent } from './component/order-customer/order-customer.component';
+import { OrderInfoComponent } from './component/order-info/order-info.component';
+import { OrderBouquetsComponent } from './component/order-bouquets/order-bouquets.component';
 
 
 
@@ -33,9 +34,10 @@ import { NewOrderAddFlowersComponent } from './component/new-order-add-flowers/n
     FlowerListComponent,
     FlowerAddComponent,
     FlowerEditComponent,
-    OrderListCustomerComponent,
     NewOrderComponent,
-    NewOrderAddFlowersComponent,
+    OrderCustomerComponent,
+    OrderInfoComponent,
+    OrderBouquetsComponent,
   ],
   imports: [
     BrowserModule,

@@ -8,6 +8,7 @@ export class Order {
   requiredDelivery: boolean;
   orderDate: string;
   orderStatus: string;
+  primeCost: number;
   customer: Customer;
   bouquets: Bouquet[];
 }

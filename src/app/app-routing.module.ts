@@ -8,7 +8,9 @@ import {FlowerListComponent} from './component/flower-list/flower-list.component
 import {FlowerAddComponent} from './component/flower-add/flower-add.component';
 import {FlowerEditComponent} from './component/flower-edit/flower-edit.component';
 import {NewOrderComponent} from './component/new-order/new-order.component';
-import {NewOrderAddFlowersComponent} from './component/new-order-add-flowers/new-order-add-flowers.component';
+import {OrderCustomerComponent} from './component/order-customer/order-customer.component';
+import {OrderInfoComponent} from './component/order-info/order-info.component';
+import {OrderBouquetsComponent} from './component/order-bouquets/order-bouquets.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'main', pathMatch: 'full'},
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path: 'add-flower', component: FlowerAddComponent},
   {path: 'edit-flower/:flowerId', component: FlowerEditComponent},
   {path: 'new-order', component: NewOrderComponent},
-  {path: 'new-order-add-flowers/:customerId', component: NewOrderAddFlowersComponent},
+  {path: 'order-customer/:customerId', component: OrderCustomerComponent},
+  {path: 'info-order/:customerId/:orderId', component: OrderInfoComponent},
+  {path: 'order-bouquets/:orderId', component: OrderBouquetsComponent},
 
 ];
 

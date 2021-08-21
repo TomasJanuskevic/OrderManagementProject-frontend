@@ -46,4 +46,8 @@ export class CustomerListComponent implements OnInit {
   public goToInfoCustomer(customerId: number): void {
     this.router.navigate(['info-customer', customerId]);
   }
+
+  public goToCustomerOrders(customerId: number): void {
+    this.router.navigate(['order-customer', customerId]);
+  }
 }

@@ -34,14 +34,14 @@ export class NewOrderComponent implements OnInit {
     this.orderService.addOrder(this.order).subscribe(
       (response) => {
         console.log(response);
-        this.goToNewOrderAddFlowers(this.order.customer.customerId);
+        this.goOrderCustomer(this.order.customer.customerId);
       },
       (error) => console.log(error)
     );
 
   }
 
-  public goToNewOrderAddFlowers(customerId: number): void {
-    this.router.navigate(['new-order-add-flowers', customerId]);
+  public goOrderCustomer(customerId: number): void {
+    this.router.navigate(['order-customer', customerId]);
   }
 }
