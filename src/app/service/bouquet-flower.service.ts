@@ -15,4 +15,8 @@ export class BouquetFlowerService {
   public addBouquetFlower(bouquetFlower: BouquetFlower): Observable<BouquetFlower> {
     return this.http.post<BouquetFlower>(`${this.backendUrl}/bouquetFlower`, bouquetFlower);
   }
+
+  public deleteBouquetFlower(bouquetFlowerId: number): Observable<void> {
+    return this.http.delete<void>(`${this.backendUrl}/bouquetFlower/${bouquetFlowerId}`);
+  }
 }

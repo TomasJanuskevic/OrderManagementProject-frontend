@@ -30,4 +30,8 @@ export class SidebarComponent implements OnInit {
     this.router.navigate(['new-order']);
   }
 
+  public goToOrders(): void {
+    this.router.navigate(['orders']);
+  }
+
 }

@@ -11,10 +11,14 @@ import {NewOrderComponent} from './component/new-order/new-order.component';
 import {OrderCustomerComponent} from './component/order-customer/order-customer.component';
 import {OrderInfoComponent} from './component/order-info/order-info.component';
 import {OrderBouquetsComponent} from './component/order-bouquets/order-bouquets.component';
+import {BouquetInfoComponent} from './component/bouquet-info/bouquet-info.component';
+import {BouquetAddComponent} from './component/bouquet-add/bouquet-add.component';
+import {BouquetFlowersComponent} from './component/bouquet-flowers/bouquet-flowers.component';
+import {OrdersComponent} from './component/orders/orders.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: 'main', pathMatch: 'full'},
-  {path: 'main', component: MainpageComponent},
+  {path: '', redirectTo: 'orders', pathMatch: 'full'},
+  {path: 'orders', component: OrdersComponent},
   {path: 'customers', component: CustomerListComponent},
   {path: 'add-customer', component: CustomerAddComponent},
   {path: 'info-customer/:customerId', component: CustomerInfoComponent},
@@ -25,7 +29,9 @@ const routes: Routes = [
   {path: 'order-customer/:customerId', component: OrderCustomerComponent},
   {path: 'info-order/:customerId/:orderId', component: OrderInfoComponent},
   {path: 'order-bouquets/:orderId', component: OrderBouquetsComponent},
-
+  {path: 'bouquet-info/:orderId/:bouquetId', component: BouquetInfoComponent},
+  {path: 'bouquet-add/:orderId', component: BouquetAddComponent},
+  {path: 'bouquet-flowers/:bouquetId', component: BouquetFlowersComponent},
 ];
 
 @NgModule({

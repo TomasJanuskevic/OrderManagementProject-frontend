@@ -12,6 +12,8 @@
           <th scope="col">Delivery</th>
           <th scope="col">Date</th>
           <th scope="col">Order Status</th>
+          <th scope="col">OrderPrice</th>
+          <th scope="col">Prime Cost</th>
           <th></th>
           <th></th>
           <th></th>
@@ -23,6 +25,8 @@
           <td>{{order.requiredDelivery}}</td>
           <td>{{order.orderDate}}</td>
           <td>{{order.orderStatus}}</td>
+          <td>{{order.orderPrice}} eur</td>
+          <td>{{order.primeCost}} eur</td>
           <td style="text-align: center">
             <button type="button" class="btn btn-outline-dark"
                     (click)="goToInfoOrder(customerId ,order.orderId)">Info

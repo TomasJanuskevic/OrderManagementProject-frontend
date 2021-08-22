@@ -1,0 +1,58 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-sm-9">
+      <div class="mb-3">
+        <h3>Bouquets Flowers</h3>
+      </div>
+      <form (ngSubmit)="addNewFlower()">
+        <div class="row">
+          <div class="col-sm-6">
+            <select class="form-select" id="customer" aria-label="Default select example"
+                    [(ngModel)]="bouquetFlower.flower"
+                    name="bouquetFlower">
+              <option
+                *ngFor="let flower of user.flowers"
+                [ngValue]="flower">{{flower.flowerName}} {{flower.color}}</option>
+            </select>
+          </div>
+          <div class="col-sm-3">
+            <input type="text" class="form-control" id="qty" placeholder="Qty" required
+                   [(ngModel)]="bouquetFlower.quantity"
+                   name="qty">
+          </div>
+          <div class="col-sm-3">
+            <button type="submit" class="btn btn-success">Add New Flower</button>
+          </div>
+        </div>
+      </form>
+      <hr>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Flower</th>
+          <th scope="col">Color</th>
+          <th scope="col">Quantity</th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bouquetFlower of bouquet.bouquetFlowers">
+          <td>{{bouquetFlower.flower.flowerName}}</td>
+          <td>{{bouquetFlower.flower.color}}</td>
+          <td>{{bouquetFlower.quantity}}</td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-danger"
+                    (click)="deleteBouquetFlower(bouquetFlower.bouquetFlowerId, bouquetFlower.flower.flowerName, bouquetFlower.flower.color)">
+              Delete
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

@@ -32,4 +32,28 @@ export class OrderBouquetsComponent implements OnInit {
     );
   }
 
+  public deleteBouquet(bouquetId: number): void {
+    if (confirm('Are you sure to delete bouquet?')) {
+      this.bouquetService.deleteBouquet(bouquetId).subscribe(
+        (response: void) => {
+          console.log(response);
+          this.getOrder();
+        },
+        (error) => console.log(error)
+      );
+    }
+  }
+
+  public goToBouquetInfo(bouquetId: number): void {
+    this.router.navigate(['bouquet-info', this.orderId, bouquetId]);
+  }
+
+  public goToAddBouquet(): void {
+    this.router.navigate(['bouquet-add', this.orderId]);
+  }
+
+  public goToBouquetFlowers(bouquetId: number): void {
+    this.router.navigate(['bouquet-flowers', bouquetId]);
+  }
+
 }

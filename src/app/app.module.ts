@@ -19,6 +19,10 @@ import {DatePipe} from '@angular/common';
 import { OrderCustomerComponent } from './component/order-customer/order-customer.component';
 import { OrderInfoComponent } from './component/order-info/order-info.component';
 import { OrderBouquetsComponent } from './component/order-bouquets/order-bouquets.component';
+import { BouquetInfoComponent } from './component/bouquet-info/bouquet-info.component';
+import { BouquetAddComponent } from './component/bouquet-add/bouquet-add.component';
+import { BouquetFlowersComponent } from './component/bouquet-flowers/bouquet-flowers.component';
+import { OrdersComponent } from './component/orders/orders.component';
 
 
 
@@ -38,6 +42,10 @@ import { OrderBouquetsComponent } from './component/order-bouquets/order-bouquet
     OrderCustomerComponent,
     OrderInfoComponent,
     OrderBouquetsComponent,
+    BouquetInfoComponent,
+    BouquetAddComponent,
+    BouquetFlowersComponent,
+    OrdersComponent,
   ],
   imports: [
     BrowserModule,

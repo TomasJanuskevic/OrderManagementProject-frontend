@@ -14,14 +14,13 @@ import {Flower} from '../../model/flower';
 export class FlowerEditComponent implements OnInit {
   user: User = new User();
   flowerId: number;
-  flower: Flower;
+  flower: Flower = new Flower();
 
   constructor(private route: ActivatedRoute, private router: Router, private flowerService: FlowerService,
               private userService: UserService) {
   }
 
   ngOnInit(): void {
-    this.flower = new Flower();
     this.flowerId = this.route.snapshot.params.flowerId;
     this.flowerService.getflower(this.flowerId).subscribe(
       (response) => {
@@ -31,9 +30,11 @@ export class FlowerEditComponent implements OnInit {
       (error) => console.log(error)
     );
     this.userService.getUser(1).subscribe((response: User) => {
-      this.user = response;
-      console.log(this.user);
-    });
+        this.user = response;
+        console.log(this.user);
+      },
+      (error) => console.log(error)
+    );
   }
 
   public editFlower(): void {

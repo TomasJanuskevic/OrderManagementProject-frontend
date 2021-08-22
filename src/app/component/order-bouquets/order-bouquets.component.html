@@ -1,0 +1,53 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-sm-9">
+      <h3>Order Bouquets</h3>
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th scope="col">Description</th>
+          <th scope="col">Price</th>
+          <th scope="col">Prime Cost</th>
+          <th scope="col">Qty</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bouquet of order.bouquets">
+          <td>{{bouquet.description}}</td>
+          <td>{{bouquet.bouquetPrice}} eur</td>
+          <td>{{bouquet.primeCost}} eur</td>
+          <td>{{bouquet.quantity}}</td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-dark" (click)="goToBouquetInfo(bouquet.bouquetId)">Info
+            </button>
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-success" (click)="goToBouquetFlowers(bouquet.bouquetId)">
+              Flowers
+            </button>
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-danger" (click)="deleteBouquet(bouquet.bouquetId)">Delete
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+      <div style="text-align: right">
+        <button type="button" class="btn btn-success" (click)="goToAddBouquet()">Add new</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

@@ -22,9 +22,11 @@ export class CustomerListComponent implements OnInit {
 
   public getCustomers(): void {
     this.userService.getUser(1).subscribe((response: User) => {
-      this.customers = response.customers;
-      console.log(this.customers);
-    });
+        this.customers = response.customers;
+        console.log(this.customers);
+      },
+      (error) => console.log(error)
+    );
   }
 
   public deleteCustomer(customerId: number, name: string, lastName: string): void {

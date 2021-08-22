@@ -4,6 +4,7 @@ import {Customer} from '../../model/customer';
 import {CustomerService} from '../../service/customer.service';
 import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import {OrderService} from '../../service/order.service';
+import {PrimeCostService} from '../../service/prime-cost.service';
 
 @Component({
   selector: 'app-new-order-add-flowers',
@@ -16,7 +17,7 @@ export class OrderCustomerComponent implements OnInit {
   dateNgb: NgbDate;
 
   constructor(private customerService: CustomerService, private orderService: OrderService, private router: Router,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute, private primeCostService: PrimeCostService) {
   }
 
   ngOnInit(): void {
