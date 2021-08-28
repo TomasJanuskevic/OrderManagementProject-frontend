@@ -1,27 +1,24 @@
-# OrderManagementFrontend
+## **Frontend - Order Management for selling bouquets**
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.12.
+### **Main Features**
 
-## Development server
+User can create list of flowers and make bouquets from them.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Bouquets add to orders and customers.
 
-## Code scaffolding
+Application calculate prime cost of every order based on flowers price.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+User can mark order as: 'IN PRODUCTION', 'PRODUCED', 'TAKEN' and send email to customer that order was made.
 
-## Build
+### **Technology**
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+* Angular 11
+* HTML
+* CSS
+* Bootstrap 5
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### **Screenshots of application**
+![OrderM_1](https://user-images.githubusercontent.com/57310135/131219135-e70e16ab-3b66-427a-b034-f2657dcf8d9f.png)
+![OrderM_2](https://user-images.githubusercontent.com/57310135/131219155-f5795e28-1d38-4424-b2b8-8cc8ad023a79.png)
+![OrderM_3](https://user-images.githubusercontent.com/57310135/131219166-b097eb73-606e-498c-b4f4-bef78c58eb3f.png)
+![OrderM_4](https://user-images.githubusercontent.com/57310135/131219265-4e4816bc-2051-4451-b319-77096b15d34c.png)

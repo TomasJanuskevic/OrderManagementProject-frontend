@@ -5,7 +5,6 @@ import {BouquetService} from '../../service/bouquet.service';
 import {Bouquet} from '../../model/bouquet';
 import {User} from '../../model/user';
 import {BouquetFlower} from '../../model/bouquetFlower';
-import {Flower} from '../../model/flower';
 import {BouquetFlowerService} from '../../service/bouquet-flower.service';
 
 @Component({
