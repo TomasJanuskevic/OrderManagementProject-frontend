@@ -9,11 +9,11 @@
         <thead>
         <tr>
           <th scope="col">Description</th>
-          <th scope="col">Delivery</th>
           <th scope="col">Date</th>
           <th scope="col">Order Status</th>
           <th scope="col">OrderPrice</th>
           <th scope="col">Prime Cost</th>
+          <th></th>
           <th></th>
           <th></th>
           <th></th>
@@ -22,7 +22,6 @@
         <tbody>
         <tr *ngFor="let order of customer.orders">
           <td>{{order.description}}</td>
-          <td>{{order.requiredDelivery}}</td>
           <td>{{order.orderDate}}</td>
           <td>{{order.orderStatus}}</td>
           <td>{{order.orderPrice}} eur</td>
@@ -39,6 +38,11 @@
           <td style="text-align: center">
             <button type="button" class="btn btn-outline-danger"
                     (click)="deleteOrder(order.orderId)">Delete
+            </button>
+          </td>
+          <td style="text-align: center">
+            <button type="button" class="btn btn-outline-warning"
+                    (click)="sendEmail(order.orderId)">Email
             </button>
           </td>
         </tr>

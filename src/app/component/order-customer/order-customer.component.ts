@@ -5,6 +5,7 @@ import {CustomerService} from '../../service/customer.service';
 import {NgbDate} from '@ng-bootstrap/ng-bootstrap';
 import {OrderService} from '../../service/order.service';
 import {PrimeCostService} from '../../service/prime-cost.service';
+import {EmailService} from '../../service/email.service';
 
 @Component({
   selector: 'app-new-order-add-flowers',
@@ -17,7 +18,7 @@ export class OrderCustomerComponent implements OnInit {
   dateNgb: NgbDate;
 
   constructor(private customerService: CustomerService, private orderService: OrderService, private router: Router,
-              private route: ActivatedRoute, private primeCostService: PrimeCostService) {
+              private route: ActivatedRoute, private primeCostService: PrimeCostService, private emailService: EmailService) {
   }
 
   ngOnInit(): void {
@@ -41,6 +42,18 @@ export class OrderCustomerComponent implements OnInit {
         (response: void) => {
           console.log(response);
           this.getCustomer();
+        },
+        (error) => console.log(error)
+      );
+    }
+  }
+
+  public sendEmail(orderId: number): void {
+
+    if (confirm('Do you really want to send email?')) {
+      this.emailService.sendEmail(this.customer, orderId).subscribe(
+        (response: void) => {
+          console.log(response);
         },
         (error) => console.log(error)
       );

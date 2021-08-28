@@ -28,4 +28,8 @@ export class OrderService {
   public deleteOrder(orderId: number): Observable<void> {
     return this.http.delete<void>(`${this.backendUrl}/order/${orderId}`);
   }
+
+  public getOrdersByUserId(userId: number): Observable<Order[]> {
+    return this.http.get<Order[]>(`${this.backendUrl}/orders/${userId}`);
+  }
 }

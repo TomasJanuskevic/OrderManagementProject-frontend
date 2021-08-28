@@ -22,7 +22,7 @@ export class NewOrderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.order.orderStatus = 'GAMINAMAS';
+    this.order.orderStatus = 'IN_PRODUCTION';
     this.userService.getUser(1).subscribe((response: User) => {
       this.user = response;
       console.log(this.user);
