@@ -1,0 +1,38 @@
+<div class="container p-5">
+  <div class="row">
+    <div class="col-sm-3">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="col-sm-9">
+      <h3>Bouquet Info</h3>
+      <form (ngSubmit)="addBouquet()">
+        <div class="mb-3">
+          <label for="description" class="form-label">Description</label>
+          <input type="text" class="form-control" id="description" placeholder="" required [(ngModel)]="bouquet.description"
+                 name="description">
+        </div>
+        <div class="mb-3">
+          <label for="price" class="form-label">Price</label>
+          <input type="text" class="form-control" id="price" placeholder="" required [(ngModel)]="bouquet.bouquetPrice"
+                 name="price">
+        </div>
+        <div class="mb-3">
+          <label for="qty" class="form-label">Qty</label>
+          <input type="text" class="form-control" id="qty" placeholder="" required [(ngModel)]="bouquet.quantity"
+                 name="qty">
+        </div>
+        <div class="mb-3">
+          <label for="accessoriesPrice" class="form-label">Accessories Price</label>
+          <input type="text" class="form-control" id="accessoriesPrice" placeholder="" required [(ngModel)]="bouquet.accessoriesPrice"
+                 name="accessoriesPrice">
+        </div>
+        <div style="text-align: right">
+          <button type="submit" class="btn btn-success">Add new</button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Customer} from '../../model/customer';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CustomerService} from '../../service/customer.service';
 import {User} from '../../model/user';
 import {UserService} from '../../service/user.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-customer-edit',
@@ -49,5 +50,4 @@ export class CustomerInfoComponent implements OnInit {
   private goToCustomerList(): void {
     this.router.navigate(['customers']);
   }
-
 }
